@@ -1,5 +1,6 @@
 
 React = require 'react'
+marked = require 'marked'
 recorder = require 'actions-in-recorder'
 ReactDOM = require 'react-dom'
 Immutable = require 'immutable'
@@ -11,6 +12,7 @@ routes = require './routes'
 updater = require './updater/index'
 Container = React.createFactory require('./app/container')
 
+require 'respo-ui'
 require './main.css'
 
 render = (core) ->
@@ -20,6 +22,9 @@ render = (core) ->
 main = ->
   installDevtools Immutable
   router = pathUtil.parseAddress location.hash.replace(/#/, ''), routes
+
+  marked.setOptions
+    breaks: true
 
   recorder.setup
     initial: schema.store.set 'router', router

@@ -19,7 +19,8 @@ module.exports = (info) ->
   module:
     rules: [
       {test: /\.coffee$/, loader: 'coffee-loader', exclude: /node_modules/}
-      {test: /.(png|jpg)$/, loader: 'url-loader', query: limit: 100}
+      {test: /\.md$/, loader: 'raw-loader'}
+      {test: /.(png|jpg|gif|woff|woff2|eot|ttf|svg)(\?.+)?$/, loader: 'url-loader', query: limit: 100}
       {test: /\.css$/, loader: ExtractTextPlugin.extract({
         fallbackLoader: 'style-loader', loader: 'css-loader!postcss-loader'
       })}

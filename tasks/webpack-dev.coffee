@@ -24,7 +24,8 @@ module.exports = (info) ->
   module:
     rules: [
       {test: /\.coffee$/, loaders: ['coffee-loader', 'coffeelint-loader'], exclude: /node_modules/}
-      {test: /.(png|jpg|gif)$/, loader: 'url-loader', query: limit: 100}
+      {test: /\.md$/, loader: 'raw-loader'}
+      {test: /.(png|jpg|gif|woff|woff2|eot|ttf|svg)(\?.+)?$/, loader: 'url-loader', query: limit: 100}
       {test: /\.css$/, loaders: ['style-loader', 'css-loader', 'postcss-loader']}
       {test: /\.json$/, loader: 'json-loader'}
     ]
