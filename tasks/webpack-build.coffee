@@ -9,7 +9,7 @@ module.exports = (info) ->
   # returns
   entry:
     main: [ './src/main' ]
-    vendor: ['react']
+    vendor: ['react', 'immutable', 'respo-ui', 'react-dom', 'highlight.js']
   output:
     path: path.join(info.__dirname, 'build/')
     filename: '[name].[chunkhash:8].js'

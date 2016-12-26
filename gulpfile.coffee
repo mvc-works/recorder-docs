@@ -15,7 +15,7 @@ gulp.task 'rsync', (cb) ->
     src: [ 'build/*' ]
     recursive: true
     args: [ '--verbose' ]
-    dest: 'tiye:~/repo/workflow/'
+    dest: 'repo.tiye.me:~/repo/mvc-works/recorder-docs/'
     deleteAll: true
   , (error, stdout, stderr, cmd) ->
     if error != null

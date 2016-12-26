@@ -9,10 +9,12 @@ Doc = React.createFactory require './doc'
 
 routes = require '../routes'
 
-{div} = React.DOM
+{div, a, span} = React.DOM
 
 styleContainer =
+  backgroundColor: hsl 200, 44, 94
   fontFamily: 'Hind'
+  fontWeight: 300
   position: 'absolute'
   height: '100%'
   width: '100%'
@@ -21,13 +23,17 @@ styleContainer =
 
 styleHeader =
   height: 64
-  backgroundColor: hsl 0, 0, 98
+  backgroundColor: 'white'
   color: hsl 0, 0, 60
   display: 'flex'
+  justifyContent: 'space-between'
   alignItems: 'center'
-  padding: '0 16px'
+  padding: '0 32px'
   fontFamily: 'Josefin Sans'
   fontWeight: 100
+  fontSize: 20
+
+styleLogo =
   fontSize: 40
 
 styleBody =
@@ -35,18 +41,23 @@ styleBody =
   flex: 1
   overflow: 'hidden'
 
+repoUrl = 'https://github.com/mvc-works/actions-in-recorder'
+
 module.exports = React.createClass
   displayName: 'app-container'
 
   render: ->
+    router = @props.store.get 'router'
+
     div className: 'app-container', style: styleContainer,
       div style: styleHeader,
-        'Actions in Recorder'
+        span style: styleLogo, 'Actions in Recorder'
+        a href: repoUrl, target: '_blank', 'GitHub'
       div style: styleBody,
-        Sidebar()
-        Doc router: @props.store.get('router')
+        Sidebar router: router
+        Doc router: router
       Addressbar
-        router: @props.store.get('router')
+        router: router
         routes: routes
         onPopstate: (info, event) ->
           recorder.dispatch 'router/go', info

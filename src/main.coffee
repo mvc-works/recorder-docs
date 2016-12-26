@@ -1,10 +1,11 @@
 
+hljs = require 'highlight.js'
 React = require 'react'
 marked = require 'marked'
 recorder = require 'actions-in-recorder'
 ReactDOM = require 'react-dom'
 Immutable = require 'immutable'
-installDevtools = require 'immutable-devtools'
+# installDevtools = require 'immutable-devtools'
 pathUtil = require 'router-as-view/lib/path'
 
 schema = require './schema'
@@ -20,11 +21,14 @@ render = (core) ->
   ReactDOM.render (Container store: core.get('store')), mountPoint
 
 main = ->
-  installDevtools Immutable
+  # installDevtools Immutable
   router = pathUtil.parseAddress location.hash.replace(/#/, ''), routes
 
   marked.setOptions
     breaks: true
+    highlight: (code, lang, callback) ->
+      result = hljs.highlightAuto(code.trim(), [lang])
+      result.value
 
   recorder.setup
     initial: schema.store.set 'router', router

@@ -14,7 +14,7 @@ routerMd = require '../posts/router.md'
 historyMd = require '../posts/history.md'
 
 styleContainer =
-  padding: 16
+  padding: 32
   overflow: 'auto'
 
 styleSpace =
