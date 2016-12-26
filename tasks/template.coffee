@@ -29,7 +29,7 @@ module.exports = (env) ->
   stir.render stir.doctype,
     html {},
       head {},
-        title {}, 'Workflow'
+        title {}, 'Actions in Recorder docs'
         meta charset: 'utf-8'
         link rel: 'icon', href: logoUrl
         if assets.style?

@@ -10,9 +10,14 @@ guideMd = require '../posts/guide.md'
 apiMd = require '../posts/api.md'
 philosophyMd = require '../posts/philosophy.md'
 routerMd = require '../posts/router.md'
+historyMd = require '../posts/history.md'
 
 styleContainer =
   padding: 16
+  overflow: 'auto'
+
+styleSpace =
+  height: 200
 
 onHome = ->
   recorder.dispatch 'router/nav', '/'
@@ -28,6 +33,8 @@ module.exports = React.createClass
       when 'api' then apiMd
       when 'philosophy' then philosophyMd
       when 'router' then routerMd
+      when 'history' then historyMd
       else '404 content'
-    div style: styleContainer,
+    div style: styleContainer, className: 'markdown-content',
       div dangerouslySetInnerHTML: {__html: marked(content)}
+      div style: styleSpace

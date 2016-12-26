@@ -6,3 +6,5 @@ module.exports = Immutable.fromJS
   guide: []
   api: []
   philosophy: []
+  router: []
+  history: []

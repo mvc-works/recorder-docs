@@ -1,3 +1,20 @@
 
 body {
 }
+
+.markdown-content {
+  flex: 1;
+}
+
+.markdown-content blockquote {
+  background-color: hsl(0, 0%, 90%);
+  margin-left: 0;
+  padding: 8px 16px;
+}
+
+.markdown-content pre {
+  background-color: hsl(300, 50%, 96%);
+  padding: 16px;
+  line-height: 20px;
+  font-family: Menlo;
+}

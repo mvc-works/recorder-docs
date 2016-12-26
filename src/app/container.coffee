@@ -13,6 +13,11 @@ routes = require '../routes'
 
 styleContainer =
   fontFamily: 'Hind'
+  position: 'absolute'
+  height: '100%'
+  width: '100%'
+  display: 'flex'
+  flexDirection: 'column'
 
 styleHeader =
   height: 64
@@ -27,6 +32,8 @@ styleHeader =
 
 styleBody =
   display: 'flex'
+  flex: 1
+  overflow: 'hidden'
 
 module.exports = React.createClass
   displayName: 'app-container'
