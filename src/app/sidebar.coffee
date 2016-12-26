@@ -37,6 +37,7 @@ module.exports = React.createClass
         renderEntry 'About', 'home'
         renderEntry 'Guide', 'guide'
         renderEntry 'API', 'api'
+        renderEntry 'Debugger', 'debugger'
         renderEntry 'Philosophy', 'philosophy'
         renderEntry 'Router', 'router'
         renderEntry 'History', 'history'

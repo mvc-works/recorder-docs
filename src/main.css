@@ -18,3 +18,7 @@ body {
   line-height: 20px;
   font-family: Menlo;
 }
+
+.markdown-content img {
+  max-width: 100%;
+}

@@ -8,3 +8,4 @@ module.exports = Immutable.fromJS
   philosophy: []
   router: []
   history: []
+  debugger: []
