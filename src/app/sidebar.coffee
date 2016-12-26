@@ -2,7 +2,7 @@
 React = require 'react'
 hsl = require 'hsl'
 recorder = require 'actions-in-recorder'
-{div, style} = React.DOM
+{div, a, style} = React.DOM
 
 styleContainer =
   width: '16%'
@@ -16,6 +16,8 @@ styleEntry =
   cursor: 'pointer'
   lineHeight: '40px'
   padding: '0 32px'
+  display: 'block'
+  textDecoration: 'none'
 
 inlineStyle = """
   .side-entry:hover {
@@ -24,6 +26,7 @@ inlineStyle = """
 """
 
 onNav = (path) -> (event) ->
+  event.preventDefault()
   recorder.dispatch 'router/nav', path
 
 merge = (a, b) ->
@@ -37,7 +40,8 @@ merge = (a, b) ->
 renderEntry = (router, title, path) ->
   moreStyle = if router.get('name') is path
     backgroundColor: hsl 0, 0, 100
-  div
+  a
+    href: "/#{path}"
     onClick: onNav(path)
     className: 'side-entry'
     style: merge styleEntry, moreStyle
