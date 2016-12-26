@@ -61,5 +61,5 @@ module.exports = React.createClass
         routes: routes
         onPopstate: (info, event) ->
           recorder.dispatch 'router/go', info
-        inHash: true
+        inHash: false
         skipRendering: false

@@ -2,7 +2,9 @@
 Docs for actions-in-recorder
 ----
 
-> https://github.com/mvc-works/actions-in-recorder
+> Docs for https://github.com/mvc-works/actions-in-recorder
+
+Read online http://recorder.mvc-works.org/
 
 ### Project Template
 

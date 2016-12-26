@@ -20,10 +20,10 @@ style = stir.createFactory 'style'
 
 logoUrl = 'http://logo.cirru.org/cirru-32x32.png'
 
-module.exports = (env) ->
+module.exports = (env, path) ->
   config = settings.get(env)
   assets = resource.get(config)
-  router = pathUtil.parseAddress '/', routes
+  router = pathUtil.parseAddress path, routes
   store = schema.store.set 'router', router
 
   stir.render stir.doctype,
@@ -34,6 +34,8 @@ module.exports = (env) ->
         link rel: 'icon', href: logoUrl
         if assets.style?
           link rel: 'stylesheet', href: assets.style
+        if assets.vendorStyle?
+          link rel: 'stylesheet', href: assets.vendorStyle
         script src: assets.vendor, defer: true
         script src: assets.main, defer: true
         style {}, 'body * {box-sizing: border-box;}'

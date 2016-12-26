@@ -9,8 +9,8 @@ settings = require('./tasks/settings')
 env = 'dev'
 
 gulp.task 'rsync', (cb) ->
-  wrapper = require('rsyncwrapper')
-  wrapper.rsync
+  rsync = require('rsyncwrapper')
+  rsync
     ssh: true
     src: [ 'build/*' ]
     recursive: true
@@ -34,7 +34,13 @@ gulp.task 'script', ->
 gulp.task 'html', (cb) ->
   html = require('./tasks/template')
   fs = require('fs')
-  fs.writeFile 'build/index.html', html(env), cb
+  pages = [
+    'index.html', 'about.html', 'guide.html', 'debugger.html',
+    'api.html', 'philosophy.html', 'router.html', 'history.html'
+  ]
+  pages.forEach (page) ->
+    fs.writeFileSync "build/#{page}", html(env, page)
+  cb()
 
 gulp.task 'del', (cb) ->
   del = require('del')

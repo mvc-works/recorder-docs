@@ -50,10 +50,10 @@ module.exports = React.createClass
     div style: styleContainer,
       style dangerouslySetInnerHTML: {__html: inlineStyle}
       div style: styleBody,
-        renderEntry router, 'About', 'home'
-        renderEntry router, 'Guide', 'guide'
-        renderEntry router, 'API', 'api'
-        renderEntry router, 'Debugger', 'debugger'
-        renderEntry router, 'Philosophy', 'philosophy'
-        renderEntry router, 'Router', 'router'
-        renderEntry router, 'History', 'history'
+        renderEntry router, 'About', 'index.html'
+        renderEntry router, 'Guide', 'guide.html'
+        renderEntry router, 'API', 'api.html'
+        renderEntry router, 'Debugger', 'debugger.html'
+        renderEntry router, 'Philosophy', 'philosophy.html'
+        renderEntry router, 'Router', 'router.html'
+        renderEntry router, 'History', 'history.html'

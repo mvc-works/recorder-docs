@@ -22,7 +22,7 @@ render = (core) ->
 
 main = ->
   # installDevtools Immutable
-  router = pathUtil.parseAddress location.hash.replace(/#/, ''), routes
+  router = pathUtil.parseAddress location.pathname, routes
 
   marked.setOptions
     breaks: true
