@@ -12,7 +12,7 @@ module.exports = (info) ->
       "webpack-dev-server/client?#{config.host}:#{config.port}"
       'webpack/hot/dev-server'
     ]
-    main: [ 'webpack-hud', './src/main' ]
+    main: [ 'webpack-hud', './src/main.coffee' ]
   output:
     path: path.join(info.__dirname, 'build/')
     filename: '[name].js'
